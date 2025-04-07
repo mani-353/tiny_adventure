@@ -1,0 +1,208 @@
+{
+    "version": "0.1.0",
+    "name": "tiny_adventure",
+    "instructions": [
+        {
+            "name": "initialize",
+            "accounts": [
+                {
+                    "name": "gameAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "questAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "treasureAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": []
+        },
+        {
+            "name": "movePlayer",
+            "accounts": [
+                {
+                    "name": "gameAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "questAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "treasureAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": true,
+                    "isSigner": true
+                }
+            ],
+            "args": [
+                {
+                    "name": "direction",
+                    "type": "u8"
+                }
+            ]
+        },
+        {
+            "name": "reset",
+            "accounts": [
+                {
+                    "name": "gameAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "questAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": true,
+                    "isSigner": true
+                }
+            ],
+            "args": []
+        },
+        {
+            "name": "depositSol",
+            "accounts": [
+                {
+                    "name": "owner",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "treasureAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "amount",
+                    "type": "u64"
+                }
+            ]
+        }
+    ],
+    "accounts": [
+        {
+            "name": "Game",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "x",
+                        "type": "u8"
+                    },
+                    {
+                        "name": "y",
+                        "type": "u8"
+                    },
+                    {
+                        "name": "questsReached",
+                        "type": "u8"
+                    },
+                    {
+                        "name": "movesTaken",
+                        "type": "u16"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Quest",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "positions",
+                        "type": {
+                            "vec": {
+                                "defined": "QuestPosition"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Treasure",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "owner",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "balance",
+                        "type": "u64"
+                    }
+                ]
+            }
+        }
+    ],
+    "types": [
+        {
+            "name": "QuestPosition",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "x",
+                        "type": "u8"
+                    },
+                    {
+                        "name": "y",
+                        "type": "u8"
+                    }
+                ]
+            }
+        }
+    ],
+    "errors": [
+        {
+            "code": 6000,
+            "name": "InvalidMove",
+            "msg": "Invalid Move"
+        },
+        {
+            "code": 6001,
+            "name": "Unauthorized",
+            "msg": "Unauthorized Action"
+        },
+        {
+            "code": 6002,
+            "name": "InsufficientBalance",
+            "msg": "Insufficient Balance in Treasure Account"
+        }
+    ]
+}
