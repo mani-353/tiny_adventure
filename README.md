@@ -1,54 +1,105 @@
-# React + TypeScript + Vite
+# 🧭 Tiny Adventure - Solana Blockchain Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fun, secure, and math-driven grid-based game built on the Solana blockchain using React, Anchor, and Vite.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧩 About the Project
 
-## Expanding the ESLint configuration
+**Tiny Adventure** is a decentralized GameFi project where players navigate a 10x10 grid from `(0,0)` to `(9,9)` with the fewest moves possible. This project tackles the real-world problem of **lack of transparency and trust in online games**.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+By leveraging blockchain technology, all gameplay mechanics and rewards are **verifiable, transparent, and secure**—ensuring no fraud or manipulation.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+### 🔑 Key Features
+
+- ✅ **Secure blockchain game** – Every move and reward is verified and stored on-chain, eliminating any misuse or fraud.
+- 📐 **Math-driven rewards** – Calculations are based on distance, optimal path, and player effort.
+- 🧠 **Dijkstra's Algorithm** – Used to calculate and validate the shortest path for fair scoring.
+- 📊 **Coordinate geometry logic** – Applied for movement, validation, and distance calculations.
+- 🎮 **Amazing and stunning UI** – Built with smooth animations and pixel-art styled aesthetics.
+- 🎵 **Gaming feel with background music** – Sound integration to create an immersive game experience.
+
+---
+
+## 🛠 My Experience
+
+This project pushed me to grow as a blockchain developer and full-stack engineer. I faced and solved:
+
+- ⚙️ **Anchor & CLI version mismatches** – Fixed by reinstalling WSL and managing version control.
+- 🧪 **Writing test cases** – Learned to simulate user behavior and assert blockchain state changes.
+- 🔗 **Connecting frontend to Solana** – Used Anchor IDL and `@solana/web3.js` for seamless interaction.
+- 📉 **Gas optimization** – Refactored logic to stay within compute limits of Solana programs.
+
+---
+
+## 🧰 Tech Stack
+
+- 🧱 **Solana Blockchain**
+- 🧠 **Anchor Framework** (v0.29.0)
+- ⚛️ **React + Vite** (Frontend)
+- 💡 **TypeScript**
+- 🎨 **TailwindCSS** (UI)
+- 🎵 **Howler.js** (for background music)
+
+---
+
+---
+
+## ⚙️ Prerequisites
+
+Ensure the following are installed before you begin:
+
+- 🟢 [Node.js](https://nodejs.org/en/) `v18.x`
+- 🦀 [Rust](https://www.rust-lang.org/) `>=1.70`
+- 🪙 [Solana CLI](https://docs.solana.com/cli/install-solana-cli) `v1.18.x`
+- 🧭 [Anchor CLI](https://book.anchor-lang.com/getting_started/installation.html) `v0.29.0`
+- 🧶 [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/)
+
+---
+
+## 💻 How to Clone & Run Locally
+
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/tiny-adventure.git
+cd tiny-adventure
+
+# Install frontend
+yarn install
+yarn dev
+
+# Setup backend
+cd ../contracts/tiny_adventure
+anchor build
+anchor test
+
+# Optional: Run a local validator
+solana-test-validator
 ```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🌐 Live Demo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+🕹️ [Try the Game Live](https://tiny-adventure-sandy.vercel.app/)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 🤝 Collaboration & Future Scope
+
+I’m open to **collaborations, issues, and pull requests**! Feel free to contribute.
+
+### 🔮 What’s Next?
+
+- 🧝 Character NFTs and skins  
+- 💰 Token-based rewards and marketplace  
+- 🏆 Leaderboards and on-chain player stats  
+- 🤖 AI-based hint system  
+- 🎮 Multiplayer mode with wallet-linked battles  
+
+---
+
+⭐ If you liked this project, leave a star and let’s connect!
+
+---
